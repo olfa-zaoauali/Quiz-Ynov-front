@@ -1,0 +1,9 @@
+<ul>
+    @for (quiz of quizes; track quiz.id) {
+        <li>
+            <a [routerLink]="[quiz.id]">
+                {{quiz.name}}         
+            </a>
+        </li>
+    }
+</ul>
