@@ -1,0 +1,40 @@
+<div class="quiz-container">
+  <h1>Questionnaire</h1>
+
+  <!-- Affichage du timer en haut à droite -->
+  <div class="timer">
+    <p>Temps restant : <span>{{ formattedTime }}</span></p>
+  </div>
+
+  <!-- Si le quiz est en cours -->
+  @if (!quizFinished) {
+    <div class="question-card">
+      <!-- Affichage de la question actuelle -->
+      <h2>{{ questions[currentQuestionIndex].content }}</h2>
+      
+      <!-- Affichage des choix pour la question actuelle -->
+      @for (choice of questions[currentQuestionIndex].choices; track choice) {
+        <li class="choice-item">
+          <label>
+            <input
+              type="radio"
+              name="question-{{ currentQuestionIndex }}"
+              [value]="choice"
+              [(ngModel)]="selectedAnswer"
+            />
+            {{ choice }}
+          </label>
+        </li>
+      }
+    </div>
+    <button class="next-button" (click)="nextQuestion()">Suivant</button>
+  }
+
+  <!-- Si le quiz est terminé -->
+  @if (quizFinished) {
+    <div class="score-container">
+      <h2>Quiz terminé !</h2>
+      <p>Votre score : {{ finalscore }} / {{ questions.length }}</p>
+    </div>
+  }
+</div>

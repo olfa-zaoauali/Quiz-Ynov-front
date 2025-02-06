@@ -1,0 +1,26 @@
+<div class="category-container">
+    <h1>Liste des Catégories</h1>
+  
+    <!-- Liste des catégories avec leurs quiz associés -->
+    <div>
+      @for (category of categorys; track category.id) {
+        <div class="category-card">
+          <h3 class="category-name">{{ category.name }}</h3>
+  
+          <ul class="quiz-list">
+            @for (quiz of quizes; track quiz.id) {
+              @if (quiz.categoryId === category.id) {
+                <li class="quiz-item">
+                    <a [routerLink]="[quiz.id]">
+                        {{quiz.name}}         
+                    </a>
+                </li>
+               
+              }
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+  

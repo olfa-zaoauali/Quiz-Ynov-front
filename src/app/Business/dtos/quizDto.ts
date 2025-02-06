@@ -1,3 +1,4 @@
+
 export interface QuizDto{
 
     readonly id: string; 
@@ -6,5 +7,6 @@ export interface QuizDto{
     readonly categoryById: string; 
     readonly difficulty: number; 
     readonly dateCreation: string; 
+    
 
 }

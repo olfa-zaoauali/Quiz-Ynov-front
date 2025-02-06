@@ -1,0 +1,13 @@
+/* sidebar.component.css */
+.bg-light {
+    height: 100vh;
+  }
+  .nav-link {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+  /* Style pour la classe active-link */
+.active-link {
+  background-color: #007bff !important;  /* Bleu pour le fond */
+  color: white !important; /* Texte en blanc */
+}

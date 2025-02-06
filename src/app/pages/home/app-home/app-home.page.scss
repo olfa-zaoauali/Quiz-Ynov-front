@@ -1,0 +1,95 @@
+/* Container for the entire page */
+.home-container {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Hero Section (the main section) */
+  .hero-section {
+    background: linear-gradient(135deg, #3b8d99, #6c7c92);
+    color: white;
+    padding: 60px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .hero-section .highlight {
+    color: #f4a300;
+  }
+  
+  .hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .hero-section .btn-start {
+    background-color: #f4a300;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-section .btn-start:hover {
+    background-color: #d68700;
+  }
+  
+  /* Info Section (additional boxes below the hero section) */
+  .info-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .info-box {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .info-box h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .info-box p {
+    font-size: 1.1em;
+    color: #666;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .info-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .info-box {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  
+    .hero-section h1 {
+      font-size: 2em;
+    }
+  
+    .hero-section p {
+      font-size: 1em;
+    }
+  }
+  

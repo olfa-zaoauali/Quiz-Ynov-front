@@ -1,3 +1,5 @@
+import { Question } from "./question";
+
 export interface Quiz{
 
     readonly id: string; 
@@ -6,5 +8,6 @@ export interface Quiz{
     readonly categoryId: string; 
     readonly difficulty: number; 
     readonly dateCreation: Date; 
+
 
 }
