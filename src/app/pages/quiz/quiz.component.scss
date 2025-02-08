@@ -38,6 +38,7 @@ h2 {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .next-button:hover {
@@ -53,10 +54,7 @@ h2 {
   color: red;
 }
 
-.score-container {
-  text-align: center;
-  margin-top: 30px;
-}
+
 
 .score-container h2 {
   font-size: 1.5rem;
@@ -66,4 +64,31 @@ h2 {
 .score-container p {
   font-size: 1.2rem;
   font-weight: bold;
+}
+.score-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.score-absolute, .score-percentage {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.score-absolute {
+  color: #28a745; /* Vert */
+}
+
+.score-percentage {
+  color: #007bff; /* Bleu */
 }

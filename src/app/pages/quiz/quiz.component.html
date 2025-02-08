@@ -33,8 +33,13 @@
   <!-- Si le quiz est terminé -->
   @if (quizFinished) {
     <div class="score-container">
-      <h2>Quiz terminé !</h2>
-      <p>Votre score : {{ finalscore }} / {{ questions.length }}</p>
+        <h2>🎉 Quiz terminé ! 🎉</h2>
+        
+        <div class="score-box">
+            <p class="score-absolute">✅ Score : <strong>{{ finalscore }} / {{ questions.length }}</strong></p>
+            <p class="score-percentage">📊 Pourcentage : <strong>{{ (finalscore / questions.length * 100).toFixed(2) }}%</strong></p>
+        </div>
     </div>
-  }
+}
+
 </div>
