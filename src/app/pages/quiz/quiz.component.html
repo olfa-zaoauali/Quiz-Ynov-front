@@ -1,45 +1,46 @@
 <div class="quiz-container">
-  <h1>Questionnaire</h1>
+  <h1>🧠 Questionnaire 🧠</h1>
 
-  <!-- Affichage du timer en haut à droite -->
+  <!-- Timer displayed in the top right -->
   <div class="timer">
-    <p>Temps restant : <span>{{ formattedTime }}</span></p>
+    <p>⏳<span>{{ formattedTime }}</span></p>
   </div>
 
-  <!-- Si le quiz est en cours -->
+  <!-- If the quiz is in progress -->
   @if (!quizFinished) {
     <div class="question-card">
-      <!-- Affichage de la question actuelle -->
+      <!-- Display the current question -->
       <h2>{{ questions[currentQuestionIndex].content }}</h2>
       
-      <!-- Affichage des choix pour la question actuelle -->
-      @for (choice of questions[currentQuestionIndex].choices; track choice) {
-        <li class="choice-item">
-          <label>
-            <input
-              type="radio"
-              name="question-{{ currentQuestionIndex }}"
-              [value]="choice"
-              [(ngModel)]="selectedAnswer"
-            />
-            {{ choice }}
-          </label>
-        </li>
-      }
+      <!-- List of answer choices -->
+      <ul class="choices-list">
+        @for (choice of questions[currentQuestionIndex].choices; track choice) {
+          <li class="choice-item">
+            <label class="choice-label">
+              <input
+                type="radio"
+                name="question-{{ currentQuestionIndex }}"
+                [value]="choice"
+                [(ngModel)]="selectedAnswer"
+              />
+              {{ choice }}
+            </label>
+          </li>
+        }
+      </ul>
     </div>
-    <button class="next-button" (click)="nextQuestion()">Suivant</button>
+
+    <button class="next-button" (click)="nextQuestion()">➡️ Next</button>
   }
 
-  <!-- Si le quiz est terminé -->
+  <!-- If the quiz is finished -->
   @if (quizFinished) {
     <div class="score-container">
-        <h2>🎉 Quiz terminé ! 🎉</h2>
-        
-        <div class="score-box">
-            <p class="score-absolute">✅ Score : <strong>{{ finalscore }} / {{ questions.length }}</strong></p>
-            <p class="score-percentage">📊 Pourcentage : <strong>{{ (finalscore / questions.length * 100).toFixed(2) }}%</strong></p>
-        </div>
+      <h2>🎉 Congratulations, quiz completed! 🎉</h2>
+      <div class="score-box">
+        <p class="score-absolute">✅ Score: <strong>{{ finalscore }} / {{ questions.length }}</strong></p>
+        <p class="score-percentage">📊 Percentage: <strong>{{ (finalscore / questions.length * 100)}}%</strong></p>
+      </div>
     </div>
-}
-
+  }
 </div>

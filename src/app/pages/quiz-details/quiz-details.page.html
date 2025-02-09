@@ -3,13 +3,12 @@
   <div class="quiz-details">
     <ul class="quiz-info">
       <li><strong>Description:</strong> {{ quize?.description }}</li>
-      <li><strong>Catégorie:</strong> {{ category?.name }}</li> <!-- Affichage du nom de la catégorie -->
-      <li><strong>Date de création:</strong> {{ quize?.dateCreation }}</li>
-      <li><strong>Difficulté:</strong> {{ quize?.difficulty }}</li>
+      <li><strong>Category:</strong> {{ category?.name }}</li> <!-- Display the category name -->
+      <li><strong>Creation Date:</strong> {{ quize?.dateCreation }}</li>
+      <li><strong>Difficulty:</strong> {{ quize?.difficulty }}</li>
     </ul>
     <button class="btn-start" [disabled]="!quize?.id" (click)="startQuiz(quize?.id || '')">
-      Commencer le quiz
+      Start the quiz
     </button>
-
   </div>
 </div>
