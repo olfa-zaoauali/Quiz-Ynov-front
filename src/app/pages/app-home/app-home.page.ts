@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Quiz } from '../../../Business/models/quiz';
-import { QuizService } from '../../../Business/services/quizService';
-import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-app-home',

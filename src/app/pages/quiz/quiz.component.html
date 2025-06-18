@@ -1,19 +1,13 @@
 <div class="quiz-container">
   <h1>🧠 Questionnaire 🧠</h1>
 
-  <!-- Timer displayed in the top right -->
   <div class="timer">
     <p>⏳<span>{{ formattedTime }}</span></p>
   </div>
-
-  <!-- If the quiz is in progress -->
   @if (!quizFinished) {
     <div class="question-card">
-      <!-- Display the current question -->
       <h2>{{ questions[currentQuestionIndex].content }}</h2>
-      
-      <!-- List of answer choices -->
-      <ul class="choices-list">
+            <ul class="choices-list">
         @for (choice of questions[currentQuestionIndex].choices; track choice) {
           <li class="choice-item">
             <label class="choice-label">

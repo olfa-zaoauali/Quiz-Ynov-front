@@ -22,17 +22,16 @@ export class QuizDetailsPage {
   constructor(private readonly quizService: QuizService, private readonly categoryService : CategoryService,private route: ActivatedRoute,private router: Router ) { }
 
   ngOnInit(): void {
-    const quizId = this.route.snapshot.paramMap.get('id');  // Récupère l'ID du quiz depuis l'URL
+    const quizId = this.route.snapshot.paramMap.get('id');  
     if (quizId) {
       this.quizService.getQuizById(quizId).subscribe((quiz) => {
         this.quize = quiz;
         console.log('Données du quiz chargées :', this.quize);
 
         
-        // Récupération de la catégorie en fonction de l'ID de la catégorie
         if (quiz.categoryId) {
           this.categoryService.getCategoryById(quiz.categoryId).subscribe((category) => {
-            this.category = category;  // Associe la catégorie au quiz
+            this.category = category;  
           });
         }
       });

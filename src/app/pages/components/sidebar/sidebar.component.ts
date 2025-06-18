@@ -17,7 +17,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
   protected categorys: Category[] = [];
   protected quizes: Quiz[] = [];
   private subscription?: Subscription;
-  selectedCategoryId: string | null = null;  // Variable pour gérer la catégorie sélectionnée
+  selectedCategoryId: string | null = null; 
 
 
   constructor(
@@ -26,50 +26,41 @@ export class SidebarComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.getAllCategories();  // Récupérer les catégories
-    this.getAllQuizes();      // Récupérer les quiz
+    this.getAllCategories();  
+    this.getAllQuizes();      
   }
 
-  // Fonction pour récupérer toutes les catégories
   getAllCategories(): void {
     this.categoryService.listCategory().subscribe(categories => {
       this.categorys = categories;
-      this.assignQuizzesToCategories(); // Associer les quiz aux catégories
+      this.assignQuizzesToCategories(); 
     });
   }
 
-  // Fonction pour récupérer tous les quiz
   getAllQuizes(): void {
     this.quizService.list().subscribe(quizes => {
       this.quizes = quizes;
-      this.assignQuizzesToCategories(); // Associer les quiz aux catégories après avoir récupéré les quiz
+      this.assignQuizzesToCategories(); 
     });
   }
 
-  // Fonction pour associer les quiz à chaque catégorie
   assignQuizzesToCategories(): void {
-    // Parcourir toutes les catégories
     this.categorys.forEach(category => {
-      // Pour chaque catégorie, parcourir les quiz pour trouver ceux associés à cette catégorie
       this.quizes.forEach(quiz => {
         if (quiz.categoryId === category.id) {
-          // Ici, vous pouvez maintenant utiliser ces quiz pour les afficher ou faire quelque chose
           console.log(`Le quiz '${quiz.name}' appartient à la catégorie '${category.name}'`);
         }
       });
     });
   }
-  // Récupérer les quiz associés à une catégorie
   getQuizzesByCategory(categoryId: string): any[] {
     return this.quizes.filter(quiz => quiz.categoryId === categoryId);
   }
 
-  // Fonction pour gérer l'affichage/masquage du sous-menu des quiz
   toggleQuizDropdown(categoryId: string): void {
     this.selectedCategoryId = this.selectedCategoryId === categoryId ? null : categoryId;
   }
 
-  // Fonction pour le suivi de l'identifiant des catégories (optimisation de la boucle *ngFor)
   trackCategoryId(index: number, category: any): string {
     return category.id;
   }

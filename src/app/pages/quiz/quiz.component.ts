@@ -20,7 +20,7 @@ export class QuizComponent implements OnInit, OnDestroy {
   quizId: string | null = null;
   score: number = 0;  // Initialiser le score à 0
   finalscore: number = 0;  // Score final à la fin du quiz
-  timer = 600; // Timer de 10 minutes (600 secondes)
+  timer = 10; // Timer de 10 minutes (600 secondes)
   timerInterval: any;
   quizFinished = false;
   formattedTime: string = '';

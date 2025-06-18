@@ -1,8 +1,6 @@
 <div class="category-container">
   <h1>List of Categories</h1>
-  
-    <!-- Liste des catégories avec leurs quiz associés -->
-    <div>
+      <div>
       @for (category of categorys; track category.id) {
         <div class="category-card">
           <h3 class="category-name">{{ category.name }}</h3>

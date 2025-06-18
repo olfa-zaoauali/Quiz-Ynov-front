@@ -9,7 +9,7 @@ export class QuizMapper {
         return {
             ...rest,
             categoryId: categoryById,
-            dateCreation: new Date(dateCreation) // Convertir dateCreation en un objet Date
+            dateCreation: new Date(dateCreation) 
         }; 
     }
 }
